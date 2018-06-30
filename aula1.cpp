@@ -62,7 +62,7 @@ int main()
             std::cout << "erro!" << std::endl;
         }
         else {
-            for(int k=inicial; k<final+razao; k+=razao){
+            for(int k=inicial; k<=final; k+=razao){
                 somatoria += k;
             }
             std::cout << "resultado da soma:" << somatoria << std::endl;
