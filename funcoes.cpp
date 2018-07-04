@@ -7,7 +7,7 @@ int factorial (int n)
 
 float expo (float x, int n)
 {
-    return (n==0)?1:n*expo(x,n-1);
+    return (n==0)?1:x*expo(x,n-1);
 }
 
 int PA_TotalTermos ( int inicial, int final, int razao )
