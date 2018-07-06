@@ -18,8 +18,28 @@ int PA_TotalTermos ( int inicial, int final, int razao )
     return ( final-inicial+razao) / razao;}
 }
 
-void ImprimePares ( int inicial , int final ){}
-double DobraValor ( int ultimo_dia ) {}
-double DobraValor_for ( int ultimo_dia ) {}
-double TotalCombinacoes ( int conjunto, int escolhas ) {}
-'
+void ImprimePares ( int inicial , int final )
+{
+    int num_cnt = 0;
+    std::vector<int> even_num;
+    std::cout << "Lista dos numeros pares entre" << inicial << "e" << final << std::endl;
+    for (int i=inicial; i<=final;++i)
+    {
+      if(i%2==0){
+          num_cnt += 1;
+          even_num.push_back(i);
+      }
+    }
+
+    std::cout << "Total de numeros a imprimir: " << even_num.size() << std::endl;
+    std::vector<int>::iterator itc = even_num.begin();
+    while ( itc!=even_num.end() ){
+        std::cout << *itc << ",";
+        ++itc;
+        if (itc==even_num.end())
+            std::cout << "\n";
+    }
+}
+//double DobraValor ( int ultimo_dia ) {}
+//double DobraValor_for ( int ultimo_dia ) {}
+//double TotalCombinacoes ( int conjunto, int escolhas ) {}
