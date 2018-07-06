@@ -109,7 +109,6 @@ int main(int argc, char **argv)
     std::cout << "Total termos entre 1 e 10, razao -3 = " << PA_TotalTermos(10,1,-3) <<std::endl;
 
     std::cout << "Testa imprime pares: \n";
+    ImprimePares(1,11);
     return 0;
 }
-
-
