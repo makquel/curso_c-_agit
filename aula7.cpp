@@ -68,17 +68,48 @@ public:
         return m_contador < 30;
     }
 };
+
+struct A
+{
+    virtual void f(){}
+    int a;
+};
+struct B:A
+{
+    int b;
+};
+void f(A *pa)
+{
+    B *pb = dynamic_cast<B *>(pa);
+    if(pb)
+        std::cout << "Derivada\n";
+    else
+        std::cout << "Base\n";
+
+}
 int main()
 {
-    try
-    {
-        throw MyException(1);
-    }
-    catch(std::exception &e)
-    {
-        std::cout << e.what() << '\n';
-    }
-    MeuRelat r1;
-    r1.imprime();
+//    try
+//    {
+//        throw MyException(1);
+//    }
+//    catch(std::exception &e)
+//    {
+//        std::cout << e.what() << '\n';
+//    }
+//    MeuRelat r1;
+//    r1.imprime();
+//    return 0;
+    A meuA;
+    B meuB;
+    f(&meuA);
+    f(&meuB);
+    /*if(){
+        std::cout << "objeto base" << std::endl;
+    }else
+        std::cout << "objeto derivado" << std::endl;*/
+
     return 0;
+
+
 }
